@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+  {% block body %}
+  <a href="/filterjobs" style="color: black;">
+  <div align="right" data-toggle="tooltip" data-placement="top" title="Filter To Your Skills" >
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-funnel" viewBox="0 0 16 16" >
+      <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2h-11z"/>
+    </svg><br><br>
+  </div>
+</a>
+  <div class="row row-cols-1 row-cols-sm-3 g-4">
+    {% for jobs in jobinformation %}
+    <div class="col">
+      <div class="card">
+        <img src={{ jobs[2] }} class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{ jobs[1] }}</h5>
+          <p class="card-text">{{ jobs[0] }}</p><p class="card-text">{{ jobs[3] }}</p>
+          <a href="/jobapplied/{{jobs[0]}}"><input type="button" class="btn btn-success" value = "Apply" style="background-color: #00C1AB;"></a> 
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endblock %}

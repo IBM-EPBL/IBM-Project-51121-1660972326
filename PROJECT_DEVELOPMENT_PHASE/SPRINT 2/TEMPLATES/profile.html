@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block body %}
+<form method="post" action="{{ url_for('editProfile') }}" >
+<label>User Name : </label>
+<input class="form-control" id="usernameInUser" name = "usernameInUser" value = {{usernameInUser}}  readonly >   </input><br>
+<label>Password : </label>
+<input class="form-control" id="userPassword" type="password" name = "userPassword" value = {{userPassword}}  required minlength="8">   </input><br>
+<label>Email Id : </label>
+<input class="form-control" id="userEmail" type = "email" name = "userEmail" required value = {{userEmail}} /><br>
+<label>First Name : </label>
+<input class="form-control" id="firstName" name = "firstName" required value = {{firstName}} /><br>
+<label>Last Name : </label>
+<input class="form-control" id="lastName" name = "lastName" required value= {{lastName}} /><br>
+
+<input type="submit" class="btn btn-outline-success" value="Save"></br></br>
+</form>
+{{msg}}
+
+{% endblock %}

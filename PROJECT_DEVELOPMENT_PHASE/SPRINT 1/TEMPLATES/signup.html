@@ -1,0 +1,71 @@
+<!--<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Register </title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">             
+    </head>
+    <body></br></br></br></br></br>
+        <div align="center">
+          <div align="center" class="border">
+             <div class="header">
+                <h1 class="word">Register</h1>
+             </div></br></br></br>
+            <h2 class="word">
+                <form action="{{ url_for('signup') }}" method="post">
+                  <div class="msg">{{ msg }}</div>
+                    <input id="username" name="username" type="text" placeholder="Enter Your Username" class="textbox"/></br></br>
+                    <input id="password" name="password" type="password" placeholder="Enter Your Password" class="textbox"/></br></br>
+                    <input id="email" name="email" type="text" placeholder="Enter Your Email ID" class="textbox"/></br></br>
+                    <input id="fname" name="fname" type="text" placeholder="Enter Your First Name" class="textbox"/></br></br>
+                    <input id="lname" name="lname" type="text" placeholder="Enter Your Last Name" class="textbox"/></br></br>
+                    <input type="submit" class="btn" value="Sign Up"></br>
+                </form>
+            </h2>
+            <p class="bottom">Already have an account?  <a class="bottom" href="{{url_for('signin')}}"> Sign In here</a></p>
+          </div>
+        </div>
+    </body>
+</html>-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title> Login </title>
+        <link rel="stylesheet" href="../static/css/signin.css">
+      </head>
+    <body>
+<div class="wrapper">
+        <div class="logo">
+          <img src="https://sloanreview.mit.edu/wp-content/uploads/2021/05/GEN-Palmer-Skills-Atrophy-1290x860-1.jpg" alt="">
+      </div>
+      <div class="text-center mt-4 name">
+          Skill Pal
+      </div>
+      <form class="p-3 mt-3 " action="{{ url_for('signup') }}" method="post">
+          <div class="form-field d-flex align-items-center">
+              <span class="far fa-user"></span>
+              <input id="username" name="username" type="text" placeholder="Username" class="textbox" required minlength=8/>
+            </div>
+          <div class="form-field d-flex align-items-center">
+              <span class="fas fa-key"></span>
+              <input id="password" name="password" type="password" placeholder="Password" class="form-control" required minlength=8/>
+            </div>
+            <div class="form-field d-flex align-items-center">
+              <span class="fas fa-key"></span>
+              <input id="email" name="email" placeholder="Email ID" class="textbox" required type="email"/>
+            </div><div class="form-field d-flex align-items-center">
+              <span class="fas fa-key"></span>
+              <input id="fname" name="fname" type="text" placeholder="First Name" class="textbox" required/>
+            </div><div class="form-field d-flex align-items-center">
+              <span class="fas fa-key"></span>
+              <input id="lname" name="lname" type="text" placeholder="Last Name" class="textbox" required/>
+            </div>
+          <input type="submit" class="btn mt-3" value="Sign up"></br></br>
+      </form>
+      <br>
+      <div class="text-center fs-6">
+        <p class="bottom">Already have an account?  <a class="bottom" href="{{url_for('signin')}}"> Sign In here</a></p>
+      </div>
+      <div class="msg">{{ msg }}</div>
+
+  </div></body>
+  </html>

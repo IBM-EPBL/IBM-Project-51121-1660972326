@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+  {% block body %}
+  <form method="post" action="{{ url_for('editskill') }}" >
+        <label>Skill 1 </label>
+        <input class="form-control" id="skill1" name = "skill1" required value="{{skill1}}"></input><br>
+        <label>Skill 2 </label>
+        <input class="form-control" id="skill2" name = "skill2" value="{{skill2}}"></input><br>
+        <label>Skill 3 </label>
+        <input class="form-control" id="skill3" name = "skill3" value="{{skill3}}"></input><br>
+        <input type="submit" class="btn btn-outline-success" value="Save"></br></br>
+    </form>
+    {{msg}}
+{% endblock %}

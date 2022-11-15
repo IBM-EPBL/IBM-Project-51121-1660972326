@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block body %}
+
+<br>
+    <form method="post" action="{{ url_for('appliedjob') }}" class="needs-validation" novalidate>
+      <label for="validationTextarea">Please tell about yourself, and why you need this job : </label><br>
+      <textarea class="form-control" id="reasoncontent" name = "reasoncontent" placeholder="About You" required></textarea>
+      <br>
+      <input class="form-control" id="appliedJobId" name = "appliedJobId" value = {{jobid}}  readonly>   </input><br>
+
+      <label>Company : </label><br>
+      <input class="form-control" id="jobInfo" name = "jobInfo" value = {{jobname}}  readonly>   </input><br>
+      <label>Company Email   : </label><br>
+      <input class="form-control" id="jobEmailForm" name = "jobEmailForm" value = {{jobemail}}  readonly>   </input><br>
+
+
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationTooltip01">Portfolio Link : </label>
+            <input type="text" class="form-control" id="portfolio" name="portfolio" placeholder = "www.ram.com" required>
+            <div class="valid-tooltip">
+              Looks good!
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationTooltip03">Preferred Location : </label>
+            <input type="text" class="form-control" id="citypreffered" name="citypreffered" placeholder="City" required>
+            <div class="invalid-tooltip">
+              Please provide a valid city.
+            </div>
+          </div>
+         <!-- <div class="custom-file">
+            <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+            <label class="custom-file-label" for="validatedCustomFile">Resume</label>
+            <div class="invalid-feedback">Example invalid custom file feedback</div>
+          </div>
+        </div>-->
+        <button class="btn btn-outline-success" type="submit">Submit form</button>
+      </form>
+
+
+{% endblock %}

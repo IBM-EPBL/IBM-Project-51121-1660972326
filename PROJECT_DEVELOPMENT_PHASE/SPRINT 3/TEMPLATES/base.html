@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <meta charset="utf-8">
+    <title>Surya V</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+{% endblock %}  
+</head>
+  <body>
+    <nav class="navbar navbar-expand-lg" style="background-color: #00C1AB;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/dashboard">Skill Pal</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/dashboard">Skill Enhancement</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/jobmarket">Job Market</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/jobsapplied">Applied Jobs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="/userguide">User Guide</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link active" href="/addskill">Add Skills</a>
+              </li> 
+            </ul>
+            <a href="/profile" style="color: black;">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16" style="margin-right: 25px;">
+                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+              </svg>   
+            </a>  <div>
+              <a class="nav-link active" href="/logout" style="margin-right: 25px;">Logout</a></div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <script>
+          window.watsonAssistantChatOptions = {
+            integrationID: "9be41b76-06b0-426f-8469-962f2963cdb6", // The ID of this integration.
+            region: "au-syd", // The region your integration is hosted in.
+            serviceInstanceID: "76838ca2-a227-4f56-b180-94f01901cdbf", // The ID of your service instance.
+            onLoad: function(instance) { instance.render(); }
+          };
+          setTimeout(function(){
+            const t=document.createElement('script');
+            t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+            document.head.appendChild(t);
+          });
+        </script>
+        <br>
+      {% block body %}
+    <h1>Hello, world!</h1>
+    {% endblock %}
+    </div>
+</body>
+</html>
